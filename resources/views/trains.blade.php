@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body>
-    <h1>Treni di oggi:</h1>
+    <h1>Treni:</h1>
     <div class="trains">
         @foreach ($trains as $train)
             <div class="{{$train->id %2 == 0 ? 'even' :''}}">
