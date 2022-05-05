@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'TrainController@trainsList')->name('train');
+
+Route::get('/popola', 'TrainController@popolaDB')->name('train');
