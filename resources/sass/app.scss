@@ -28,5 +28,18 @@ html{
         background-color: #e1e1e1;
     }
 }
+.pages{
+    ul{
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 10vw;
+        margin: auto;
+        a{
+            text-decoration: none;
 
+        }
+    }
+}
 

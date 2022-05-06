@@ -7,7 +7,7 @@ use App\Train;
 class TrainController extends Controller
 {
     public function trainsList() {
-        $trains = Train::all();
+        $trains = Train::paginate(25);
         return view('trains', compact('trains'));
     }
     public function popolaDB() {
@@ -20,17 +20,7 @@ class TrainController extends Controller
         ];
 
 
-        for ($i=0; $i<100; $i++){
-            $train = new Train();
-            $train->stazione_partenza = $data['towns'][rand(0, 15)];
-            $train->stazione_arrivo = $data['towns'][rand(0, 15)];
-            $train->orario_partenza = $data['time'][rand(0, 7)];
-            $train->orario_arrivo = $data['time'][rand(0, 7)];
-            $train->codice_treno = $data['code'][rand(0, 7)];
-            $train->treno_in_orario = $data['late'][rand(0, 8)];
-            $train->binario = $data['platform'][rand(0, 13)];
-            $train->save();
-        }
+
         return 'fatto';
     }
 }
